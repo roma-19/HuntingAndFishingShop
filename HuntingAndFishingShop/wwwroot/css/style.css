@@ -101,14 +101,13 @@ body {
     width: 90%;
     justify-content: center;
     align-items: center;
-    margin-top: 90px;
+    padding-top: 60px;
 }
 
 .container-section {
-    padding-top: 91px;
     display: flex;
-    border-width: 2px;
     justify-content: center;
+
 }
 
 .img_main {
@@ -128,4 +127,11 @@ body {
     justify-content: center;
     padding: 50px;
     text-align: center;
+}
+
+.text2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 40px;
 }
