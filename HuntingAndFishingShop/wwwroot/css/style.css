@@ -1,0 +1,131 @@
+html {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; /* Устанавливаем шрифт для всего документа */
+}
+
+*,
+*:before,
+*:after {
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    box-sizing: inherit; /* Наследуем box-sizing от html */
+}
+
+body {
+    height: 1000px; /* Высота страницы для проверки прокрутки; может быть удалена позже */
+    width: 100%; /* Устанавливаем ширину на 100% */
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Выравниваем элементы по колонкам */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    background-color: gray;
+}
+
+.logo {
+    align-items: center;
+    display: inline-flex;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    width: 250px;
+}
+
+.header {
+    position: fixed; /* Фиксированное позиционирование для шапки */
+    top: 0; /* Располагаем шапку вверху экрана */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    background-color: #ffc107;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    justify-content: space-around; /* Распределяем элементы по краям */
+    padding: 15px 50px; /* Отступы внутри шапки */
+}
+
+.img-header {
+    width: 50px; /* Ширина изображения */
+    height: 50px; /* Высота изображения */
+    display: flex;
+    align-self: center;
+    
+}
+
+/* Стили для кнопок в шапке */
+.button-header {
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    align-items: center; /* Центрируем кнопки по вертикали */
+}
+
+.button-header .button {
+    border: 2px solid #370b0b; /* Граница кнопки */
+    background-color: transparent; /* Прозрачный фоновый цвет */
+    padding: 7px 14px; /* Внутренние отступы кнопки */
+    margin: 0 10px; /* Отступы справа и слева */
+    border-radius: 3px; /* Закругленные углы */
+    color: #370b0b; /* Цвет текста */
+    cursor: pointer; /* Курсор руки при наведении */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: 600; /* Вес шрифта */
+    transition: all 250ms ease; /* Плавный переход для всех свойств */
+}
+
+.button-header .button:hover {
+    color: #fff; /* Цвет текста при наведении */
+    background-color: #370b0b; /* Фоновый цвет при наведении */
+}
+
+.menu {
+    padding-top: 15px;
+    width: 100%; /* Ширина 100% от родительского элемента */
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+}
+
+.menu li {
+    display: inline; /* Располагаем элементы списка в строку */
+    padding: 0 20px; /* Отступы справа и слева */
+}
+
+.menu a {
+    font-size: 20px; /* Размер шрифта */
+    font-weight: 500; /* Вес шрифта */
+    line-height: 150%; /* Высота строки */
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    align-self: center;
+}
+
+.menu a:hover {
+    color: #000; /* Цвет текста при наведении */
+}
+
+.container {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.container-section {
+    padding-top: 91px;
+    display: flex;
+    border-width: 2px;
+    justify-content: center;
+}
+
+.img_main {
+    width: 400px;
+    height: 600px;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.text {
+    margin: 30px;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    align-self: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+}
