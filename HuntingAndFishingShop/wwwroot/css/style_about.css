@@ -1,0 +1,35 @@
+/*О нас---------------------------------------------------------------------------------------*/
+.about_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.about_img {
+    width: 400px;
+    height: 600px;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.about_text {
+    margin: 30px;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    align-self: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+}
+
+@media (max-width: 1250px) {
+    .text{
+        font-size: 15px;
+    }
+    .img_main {
+        width: 200px;
+        height: 300px;
+    }
+}

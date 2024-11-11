@@ -4,15 +4,126 @@
 }
 
 <div class="container">
-    <h2 class="text2">О нас</h2>
-    <div class="container-section">
-        <img class="img_main" src="~/images/main.jpg" alt="Описание изображения">
-        <p class="text">
-            Мечтаешь о трофейной рыбе или удачной охоте?
-            У нас ты найдешь все необходимое для воплощения своих желаний.
-            Огромный выбор товаров для рыбалки и охоты от ведущих мировых брендов.
-            Присоединяйся к нашему сообществу любителей активного отдыха!
-        </p>
+    <div id = "home" class="container-section">
+        <h2 class="title">О нас</h2>
+        <div class="about_container">
+            <img class="about_img" src="~/images/bg/main.jpg" alt="О нас">
+            <p class="about_text">
+                Мечтаешь о трофейной рыбе или удачной охоте?
+                У нас ты найдешь все необходимое для воплощения своих желаний.
+                Огромный выбор товаров для рыбалки и охоты от ведущих мировых брендов.
+                Присоединяйся к нашему сообществу любителей активного отдыха!
+            </p>
+        </div>
     </div>
 
+    <div id = "catalogue" class="container-section">
+        <h2 class="title">Каталог</h2>
+        <nav class="nav_menu">
+            <ul>
+                <li><a href="#hunting">Охота</a></li>
+                <li><a href="#fishing">Рыбалка</a></li>
+            </ul>
+        </nav>
+        <section id="hunting">
+            <div class="catalogue_logo">
+                <img class="img_logo" src="images/icons/weapon_icon.png" alt="Винтовка"/>
+                <h2>Товары для охоты</h2>
+                <img class="img_logo" src="images/icons/weapon_icon.png" alt="Винтовка"/>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/hunting/bag.jpg" alt="Рюкзак">
+                        <h3>Рюкзак</h3>
+                        <p class="price">3490 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/hunting/binocular.png" alt="Бинокль">
+                        <h3>Бинокль</h3>
+                        <p class="price">11 990 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/hunting/shotgun.jpg" alt="Ружьё">
+                        <h3>Ружьё</h3>
+                        <p class="price">115 905 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/hunting/knife.png" alt="Нож">
+                        <h3>Нож</h3>
+                        <p class="price">6 390 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/hunting/blind.jpg" alt="Засидка">
+                        <h3>Засидка</h3>
+                        <p class="price">10 290 руб.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="fishing">
+            <div class="catalogue_logo">
+                <img class="img_logo" src="images/icons/fish_icon.png" alt="Рыба"/>
+                <h2>Товары для рыбалки</h2>
+                <img class="img_logo" src="images/icons/fish_icon.png" alt="Рыба"/>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/fishing/box.png" alt="Ящик">
+                        <h3>Ящик</h3>
+                        <p class="price">5 290 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/fishing/rod.png" alt="Удилище">
+                        <h3>Удилище</h3>
+                        <p class="price"> 8 790 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/fishing/reel.jpg" alt="Катушка">
+                        <h3>Катушка</h3>
+                        <p class="price">2 190 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/fishing/tee.jpg" alt="Тройник">
+                        <h3>Тройник</h3>
+                        <p class="price">86 руб.</p>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="">
+                        <img src="images/fishing/line.png" alt="Поводок">
+                        <h3>Поводок</h3>
+                        <p class="price">279 руб.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="feedbacks" class="container-section" style="width: 50%">
+        <h2 class="title">Написать отзыв</h2>
+        <div class="block-message">
+            <div class="message-text">
+                <textarea class="text"></textarea>
+            </div>
+            <div class="message-button">
+                <button class="button" type="submit">Отправить</button>
+            </div>
+        </div>
+    </div>
 </div>

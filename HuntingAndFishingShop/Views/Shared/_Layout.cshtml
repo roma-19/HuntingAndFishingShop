@@ -1,33 +1,83 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/HuntingAndFishingShop.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_main.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_header.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_about.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_catalogue.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_log_reg.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_feedbacks.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_footer.css" asp-append-version="true"/>
     <link rel="shortcut icon" href="~/hunting.ico" />
 </head>
 <body>
-<div class = "header">
-    <img class = "img-header" src = "~/images/img_logo.png" alt="">
-    <div class="logo">Охота и Рыбалка</div>
-    <div class="menu">
+<header class = "header">
+    <img class = "header_img" src = "~/images/icons/img_logo.png" alt="Логотип">
+    <div class="header_title">Охота и Рыбалка</div>
+    <div class="header_nav">
         <ul>
             <li><a href = "#home">Главная</a></li>
-            <li><a href = "#products">Товары</a></li>
+            <li><a href = "#catalogue">Каталог</a></li>
             <li><a href = "#countries">Страны</a></li>
             <li><a href = "#feedbacks">Отзывы</a></li>
         </ul>
     </div>
-    <div class = "button-header">
-        <button class = "button">Регистрация</button>
-        <button class = "button">Войти</button>
+    <div class="header_button">
+        <button id="click-to-hide_1" class="button">Регистрация</button>
+        <button id="click-to-hide" class="button">Вход</button>
     </div>
-</div>
-<div class="container">
+</header>
+<div>
+    @await Html.PartialAsync("_LoginRegistrationPartial")
     @RenderBody()
 </div>
+
+<footer>
+    <footer class="footer-left">
+        <div class="footer_title">Охота и Рыбалка</div>
+        <div class="footer_info">
+            Наш интернет-магазин предлагает широкий выбор товаров для охоты и рыбалки. У нас вы найдете все необходимое для успешной охоты: от оружия и боеприпасов до одежды и снаряжения. Рыболовы оценят большой ассортимент удилищ, катушек, приманок и аксессуаров для любой техники ловли.
+        </div>
+        <div class="footer_R">
+            &copy; 2024 - Hunting_And_Fishing_Shop - Roznovan
+        </div>
+    </footer>
+    <footer class="footer-right">
+        <nav class="footer_nav">
+            <ul>
+                <li>
+                    <a href="https://t.me/Romarrio_06">
+                        <img src="images/contacts/tg.png" alt="Telegram">
+                        <p>Telegram</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/roma-19">
+                        <img src="images/contacts/github.png" alt="GitHub">
+                        <p>GitHub</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://vk.com/id463863123">
+                        <img class="footer_img" src="images/contacts/vk.png" alt="Vkontakte">
+                        <p>VKontakte</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/romarrio_19_">
+                        <img src="images/contacts/inst.png" alt="Instagram">
+                        <p>Instagram</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </footer>
+</footer>
+
+<script src="js/login_and_registration_script.js" asp-append-version="true"></script>
 </body>
 </html>
