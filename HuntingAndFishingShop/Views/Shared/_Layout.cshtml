@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="~/css/style_log_reg.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_feedbacks.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_footer.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_media.css" asp-append-version="true"/>
     <link rel="shortcut icon" href="~/hunting.ico" />
 </head>
 <body>
-<header class = "header">
-    <img class = "header_img" src = "~/images/icons/img_logo.png" alt="Логотип">
+<header class="header">
+    <div id="hamburger" class="icon">&#9776</div>
+    <img class="header_img" src="~/images/icons/img_logo.png" alt="Логотип">
     <div class="header_title">Охота и Рыбалка</div>
+
     <div class="header_nav">
         <ul>
-            <li><a href = "#home">Главная</a></li>
-            <li><a href = "#catalogue">Каталог</a></li>
-            <li><a href = "#countries">Страны</a></li>
-            <li><a href = "#feedbacks">Отзывы</a></li>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#catalogue">Каталог</a></li>
+            <li><a href="#countries">Страны</a></li>
+            <li><a href="#feedbacks">Отзывы</a></li>
         </ul>
     </div>
     <div class="header_button">
@@ -30,6 +33,20 @@
         <button id="click-to-hide" class="button">Вход</button>
     </div>
 </header>
+
+<div id="side-menu" class="side-menu">
+    <div>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#catalogue">Каталог</a></li>
+            <li><a href="#countries">Страны</a></li>
+            <li><a href="#feedbacks">Отзывы</a></li>
+        </ul>
+    </div>
+    <button class="button" id="side-menu-button1" type="button" name="button">Регистрация</button>
+    <button class="button" id="side-menu-button2" type="button" name="button">Войти</button>
+</div>
+
 <div>
     @await Html.PartialAsync("_LoginRegistrationPartial")
     @RenderBody()
@@ -39,7 +56,9 @@
     <footer class="footer-left">
         <div class="footer_title">Охота и Рыбалка</div>
         <div class="footer_info">
-            Наш интернет-магазин предлагает широкий выбор товаров для охоты и рыбалки. У нас вы найдете все необходимое для успешной охоты: от оружия и боеприпасов до одежды и снаряжения. Рыболовы оценят большой ассортимент удилищ, катушек, приманок и аксессуаров для любой техники ловли.
+            Наш интернет-магазин предлагает широкий выбор товаров для охоты и рыбалки.
+            У нас вы найдете все необходимое для успешной охоты: от оружия и боеприпасов до одежды и снаряжения.
+            Рыболовы оценят большой ассортимент удилищ, катушек, приманок и аксессуаров для любой техники ловли.
         </div>
         <div class="footer_R">
             &copy; 2024 - Hunting_And_Fishing_Shop - Roznovan
@@ -74,7 +93,7 @@
                 </li>
                 
             </ul>
-        </nav>
+        </nav>@*Контакты*@
     </footer>
 </footer>
 

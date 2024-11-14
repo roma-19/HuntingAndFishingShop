@@ -1,3 +1,12 @@
+.feedbacks {
+    width: 100%;
+    justify-content: center;
+}
+
+.feedbacks .container-section {
+    width: 50%;
+}
+
 .block-message {
     display: grid;
     width: 100%;

@@ -59,7 +59,7 @@
     background-color: #fff;
     color: #333;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     border-radius: 10px;
 }
 
@@ -125,22 +125,33 @@ span {
     color: rgb(131, 131, 131);
     transition: all 0.3s ease-in-out;
     padding: 0 4px;
+    font-weight: bold;
 }
 
-.form-btn {
+.form-btn-signin {
     border: 2px solid #000000;
     cursor: pointer;
     background-color: rgb(255, 165, 0);
     border-radius: 10px;
-    color: #000000;
+    color: #000;
+    font-weight: bold;
     padding: 10px 50px;
     margin-top: 10px;
     font-size: inherit;
     width: fit-content;
 }
 
-.form-btn_signup {
-    background-color: #376b0b;
+.form-btn-signup {
+    border: 2px solid #000000;
+    cursor: pointer;
+    background-color: #565e64;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 50px;
+    margin-top: 10px;
+    font-size: inherit;
+    width: fit-content;
 }
 
 .form {
@@ -169,4 +180,26 @@ span {
 .form-box.active .form_signup {
     left: 0;
     transition: 0.25s;
+}
+
+#error-messages-signin {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#error-messages-signup {
+    margin-top: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px 25px;
+    text-align: center;
 }

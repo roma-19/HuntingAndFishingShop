@@ -18,6 +18,33 @@ body {
     background-color: gray;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 20px;
+}
+
 div {
     display: flex;
 }
@@ -64,79 +91,4 @@ form {
 
 a {
     text-decoration: none;
-}
-
-footer {
-    background-color: rgba(255, 165, 0, 1);
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer_title {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.footer_info {
-    font-size: 18px;
-}
-
-footer .footer-left {
-    width: 50%;
-    display: grid;
-    gap: 20px;
-}
-
-footer .footer-right {
-    width: 50%;
-    justify-content: center;
-}
-
-.footer_R {
-    font-size: 14px;
-}
-
-.footer_nav {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #ffc720;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: auto;
-}
-
-.footer_nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer_nav li {
-    display: flex;
-    justify-content: center;
-}
-
-.footer_nav li a {
-    margin: 20px;
-    padding: 0 5px;
-    line-height: 100%;
-    border: 4px solid #000000;
-    border-radius: 10px;
-    width: 85px;
-    height: 80px;
-}
-
-.footer_nav li a:hover {
-    background-color: rgb(255, 165, 0);
-}
-
-.footer_nav li a p {
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
 }

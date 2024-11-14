@@ -23,13 +23,3 @@
     padding: 50px;
     text-align: center;
 }
-
-@media (max-width: 1250px) {
-    .text{
-        font-size: 15px;
-    }
-    .img_main {
-        width: 200px;
-        height: 300px;
-    }
-}

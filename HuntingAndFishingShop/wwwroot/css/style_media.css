@@ -1,0 +1,212 @@
+@media (max-width: 1257px) {
+    /*О нас------------------------------*/
+    .about_text{
+        font-size: 15px;
+        padding: 50px;
+        margin: 10px;
+    }
+    .about_img {
+        width: 200px;
+        height: 300px;
+        margin: 10px;
+    }
+    
+    /*Навигация----------------------------*/
+    nav ul li a {
+        margin-inline: 40px;
+    }
+}
+
+@media (max-width: 1100px) {
+    /*Товары------------------------------*/
+    .product-card {
+        flex: 1 1 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 992px) {
+    /*Шапка--------------------------------*/
+    .header_button {
+        display: none;
+    }
+    .header_nav {
+        display: none;
+    }
+    .header {
+        padding: 7px 6px;
+        justify-content: center;
+    }
+    .header_title {
+        width: 170px;
+    }
+    .icon {
+        display: flex;
+        margin: 10px;
+        color: #370b0b;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: 2px solid #370b0b;
+        border-radius: 10px;
+        font-size:  20px;
+    }
+    .side-menu.active {
+        right: 0;
+    }
+    .side-menu button {
+        margin: 10px 5px 0 0;
+        width: 35%;
+    }
+    
+    /*Контейнер---------------------------*/
+    .container-section {
+        margin: 15px 0;
+        padding: 0;
+        width: 80%;
+    }
+    
+    /*О нас-------------------------------*/
+    .title{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .about_container {
+        flex-wrap: wrap;
+    }
+    .about_img {
+        width: 100px;
+        height: 150px;
+    }
+    .about_text {
+        font-size: 15px;
+        padding: 0;
+        margin:15px;
+    }
+    nav ul li {
+        margin: 0;
+    }
+    
+    /*Вход и регистрация------------------*/
+    .block-container {
+        display: flex;
+        width: 400px;
+        height: 650px;
+        padding: 0;
+    }
+    .block {
+        height: 96%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        align-items: center;
+    }
+    .block_item {
+        width: 100%;
+        padding: 30px;
+    }
+    .form-box {
+        width: 100%;
+        height: 500px;
+        box-shadow: none;
+        top: 0;
+    }
+    .form-box.active {
+        top: 19%;
+        left: 0;
+    }
+    form-box.active .form_signup {
+        left: 0;
+        transition: 0.25s;
+    }
+    .form-box input {
+        margin: 10px 0;
+    }
+    
+    /*Подвал-----------------------------*/
+    footer {
+        margin-top: 10px;
+    }
+    
+    /*Отзыв-----------------------------*/
+    .button{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 891px) {
+    /*Товары----------------------------------*/
+    .product-card {
+        flex: 1 1 calc(33% - 20px);
+        max-width: calc(33% - 20px);
+        overflow: hidden;
+    }
+    .product-grid {
+        justify-content: center;
+    }
+    
+    /*Навигация-----------------------------------*/
+    nav ul li a {
+        margin-inline: 30px;
+    }
+}
+
+@media (max-width: 680px) {
+    /*Каталог-------------------------------------*/
+    .product-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        overflow: hidden;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .img_logo {
+        width: 30px;
+        height: 30px;
+    }
+    .img_logo {
+        margin: 0 5px 0 10px;
+    }
+    .nav_menu {
+        width: 60%;
+    }
+    
+    /*Отзыв---------------------------------------*/
+    .feedbacks .container-section {
+        width: 80%;
+    }
+    .message-text .text {
+        width: 80%;
+    }
+    
+    /*Навигация----------------------------------*/
+    nav ul li a {
+        font-size: 16px;
+        margin-inline: 10px;
+    }
+}
+
+@media (max-width: 410px) {
+    /*Каталог------------------------------------*/
+    .product-card {
+        flex: 1 1 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        overflow: hidden;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    .img_logo {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /*Навигация----------------------------------*/
+    nav ul li a {
+        font-size: 13px;
+        margin-inline: 10px;
+    }
+}
+
