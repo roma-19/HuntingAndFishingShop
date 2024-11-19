@@ -1,4 +1,17 @@
-﻿document.addEventListener('DOMContentLoaded',  function ()
+﻿function hiddenOpen_CloseClick()
+{
+    let x = document.querySelector(".container-login-registration");
+    if (x.style.display === "none")
+    {
+        x.style.display = "grid";
+    }
+    else
+    {
+        x.style.display = "none";
+    }
+}
+
+document.addEventListener('DOMContentLoaded',  function ()
 {
     const signInBtn = document.querySelector('.signin-btn');
     const signUpBtn = document.querySelector('.signup-btn');
@@ -15,18 +28,6 @@
             formBox.classList.remove('active');
             block.classList.remove('active');
         });
-    }
-    function hiddenOpen_CloseClick()
-    {
-        let x = document.querySelector(".container-login-registration");
-        if (x.style.display === "none")
-        {
-            x.style.display = "grid";
-        }
-        else
-        {
-            x.style.display = "none";
-        }
     }
     
     document.getElementById("click-to-hide").addEventListener("click", function(){

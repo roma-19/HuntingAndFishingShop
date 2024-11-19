@@ -7,4 +7,13 @@
         <RootNamespace>Services</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\HAFS.DAL\HAFS.DAL.csproj" />
+      <ProjectReference Include="..\HAFS.Domain\HAFS.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+    </ItemGroup>
+
 </Project>
