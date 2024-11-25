@@ -60,6 +60,7 @@
 .header_button {
     display: flex;
     align-items: center;
+    width: 225px;
 }
 
 .header_button .button,
@@ -115,4 +116,12 @@
 
 .side-menu ul li {
     margin: 10px 0;
+}
+
+.img_icon{
+    width: 50px;
+    height: 50px;
+}
+.img_icon_2 {
+    display: none;
 }

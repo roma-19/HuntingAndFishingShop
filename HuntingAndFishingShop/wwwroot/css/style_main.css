@@ -94,3 +94,7 @@ a {
     text-decoration: none;
 }
 
+.noscroll {
+    overflow: hidden;
+}
+

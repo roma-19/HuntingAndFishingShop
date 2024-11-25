@@ -1,10 +1,13 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using AutoMapper;
 using DAL;
 using Domain.Models;
 using Domain.ViewModels.LoginAndRegistration;
 using Microsoft.AspNetCore.Mvc;
 using HuntingAndFishingShop.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Services.Implementation;
 using Services.Interfaces;
 
@@ -15,14 +18,13 @@ public class HomeController : Controller
     private readonly IAccountService _accountService;
 
     private IMapper _mapper { get; set; }
-
+    
     private MapperConfiguration mapperConfiguration = new MapperConfiguration(p =>
     {
         p.AddProfile<AppMappingProfile>();
     });
-
+    
     private readonly ILogger<HomeController> _logger;
-
     public HomeController(ILogger<HomeController> logger, IAccountService accountService)
     {
         _logger = logger;
@@ -45,6 +47,8 @@ public class HomeController : Controller
             var responce = await _accountService.Login(user);
             if (responce.StatusCode == Domain.Enum.StatusCode.Ok)
             {
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(responce.Data));
                 return Ok(model);
             }
             ModelState.AddModelError("", responce.Description);
@@ -65,6 +69,8 @@ public class HomeController : Controller
             var responce = await _accountService.Register(user);
             if (responce.StatusCode == Domain.Enum.StatusCode.Ok)
             {
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(responce.Data));
                 return Ok(model);
             }
             ModelState.AddModelError("", responce.Description);
@@ -73,6 +79,13 @@ public class HomeController : Controller
             .Select(e => e.ErrorMessage)
             .ToList();
         return BadRequest(errors);
+    }
+
+    [AutoValidateAntiforgeryToken]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Main", "Home");
     }
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

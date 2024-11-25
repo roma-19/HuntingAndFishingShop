@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using DAL;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace HuntingAndFishingShop;
 
@@ -15,6 +16,14 @@ public class Program
         string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
         builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseNpgsql(connectionString));
+        
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+            });
+        
         builder.Services.InitializeServices();
         builder.Services.InitializeRepositories();
         
@@ -33,8 +42,9 @@ public class Program
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
-
+        
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Main}/{id?}");

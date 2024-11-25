@@ -19,7 +19,10 @@
     <div id="hamburger" class="icon">&#9776</div>
     <img class="header_img" src="~/images/icons/img_logo.png" alt="Логотип">
     <div class="header_title">Охота и Рыбалка</div>
-
+    @if (User.Identity.IsAuthenticated)
+    {
+        <img class="img_icon_2" src="@User.FindFirst("AvatarPath")?.Value" alt="" />
+    }
     <div class="header_nav">
         <ul>
             <li><a href="#home">Главная</a></li>
@@ -28,8 +31,20 @@
         </ul>
     </div>
     <div class="header_button">
-        <button id="click-to-hide_1" class="button">Регистрация</button>
-        <button id="click-to-hide" class="button">Вход</button>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <button class="button"
+                    type="button"
+                    name="button"
+                    onclick="window.location.href = '@Url.Action("Logout", "Home")'"
+            >Выйти</button>
+            <img class="img_icon" src="@User.FindFirst("AvatarPath")?.Value" alt="" />
+        }
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <button id="reg" class="button">Регистрация</button>
+            <button id="log" class="button">Вход</button>
+        }
     </div>
 </header>
 
@@ -41,8 +56,19 @@
             <li><a href="#feedback">Отзыв</a></li>
         </ul>
     </div>
-    <button class="button" id="side-menu-button1" type="button" name="button">Регистрация</button>
-    <button class="button" id="side-menu-button2" type="button" name="button">Войти</button>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <button class="button"
+                type="button"
+                name="button"
+                onclick="window.location.href = '@Url.Action("Logout", "Home")'"
+        >Выйти</button>
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <button class="button" id="side-menu-button1" type="button" name="button">Регистрация</button>
+        <button class="button" id="side-menu-button2" type="button" name="button">Войти</button>
+    }
 </div>
 
 <div>
@@ -94,6 +120,6 @@
     </footer>
 </footer>
 
-<script src="js/login_and_registration_script.js" asp-append-version="true"></script>
+<script src="js/scripts.js" asp-append-version="true"></script>
 </body>
 </html>
