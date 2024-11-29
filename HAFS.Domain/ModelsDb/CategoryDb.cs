@@ -11,4 +11,6 @@ public class CategoryDb
     
     [Column("name")]
     public string? Name { get; set; }
+    
+    List<ProductDb> Products { get; set; }
 }

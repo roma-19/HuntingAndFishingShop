@@ -23,5 +23,7 @@ public class UserDb
     
     [Column("pathImage")]
     public string? PathImage { get; set; }
+    
+    public List<OrderDb>? Orders { get; set; }
 }
 

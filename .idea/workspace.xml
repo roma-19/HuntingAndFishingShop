@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d6c7d2c-865d-4a31-9d32-a8db6e9f2908" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HAFS.Domain/ViewModels/LoginAndRegistration/ConfirmEmailViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuntingAndFishingShop/Views/Shared/_ConfirmEmailPartial.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HuntingAndFishingShop/wwwroot/images/icons/def_profile_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAFS.Domain/Response/BaseResponce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HAFS.Domain/Response/BaseResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAFS.Services/HAFS.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HAFS.Services/HAFS.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAFS.Services/Implementation/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HAFS.Services/Implementation/AccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAFS.Services/Implementation/AppMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HAFS.Services/Implementation/AppMappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HAFS.Services/Interfaces/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HAFS.Services/Interfaces/IAccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntingAndFishingShop.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HuntingAndFishingShop.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntingAndFishingShop/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HuntingAndFishingShop/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntingAndFishingShop/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HuntingAndFishingShop/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntingAndFishingShop/wwwroot/css/style_log_reg.css" beforeDir="false" afterPath="$PROJECT_DIR$/HuntingAndFishingShop/wwwroot/css/style_log_reg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntingAndFishingShop/wwwroot/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/HuntingAndFishingShop/wwwroot/js/scripts.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2pQDganytQJvxBBd6rjBF3fOJYM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d6c7d2c-865d-4a31-9d32-a8db6e9f2908" name="Changes" comment="" />
+      <created>1732689521993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732689521993</updated>
+      <workItem from="1732689530344" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

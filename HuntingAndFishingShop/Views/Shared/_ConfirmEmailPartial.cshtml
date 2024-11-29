@@ -1,0 +1,22 @@
+@model Domain.ViewModels.LoginAndRegistration.ConfirmEmailViewModel;
+
+<div class="confirm-email-container" style="display: none;">
+    <div class="confirm-email-form">
+        <div class="form__title">Регистрация</div>
+        
+        <p>На указанную почту отправлено письмо с кодом подтверждения</p>
+        
+        <input type="text" class="text_code" placeholder="Введите код подтверждения" id="code_confirm" />
+        
+        <div class="button_confirm_container">
+            <div class="button_confirm send_confirm">Отправить</div>
+            
+            <div class="button_confirm red button_confirm_close">Закрыть</div>
+        </div>
+        
+        <p class = "warning">При закрытии данной формы регистрация НЕ будет завершена!!!</p>
+        <p class = "smile">🤨</p>
+    </div>
+    
+    <div class="overlay"></div>
+</div>

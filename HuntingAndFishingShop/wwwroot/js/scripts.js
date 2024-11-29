@@ -1,9 +1,9 @@
 ﻿document.addEventListener('DOMContentLoaded',  function ()
 {
     //Открытие и закрытие контейнера (отмена скролла при открытии)
-    function hiddenOpen_CloseClick()
+    function hiddenOpen_CloseClick(container)
     {
-        let x = document.querySelector(".container-login-registration");
+        let x = document.querySelector(container);
         if (x.style.display === "none")
         {
             x.style.display = "grid";
@@ -15,6 +15,34 @@
             document.body.classList.remove("noscroll");
         }
     }
+    
+    
+    //Кнопка регистрации в форме
+    const reg_button = document.getElementById("reg");
+    if (reg_button) {
+        reg_button.addEventListener('click', function() {
+            hiddenOpen_CloseClick(".container-login-registration");
+            formBox.classList.add('active');
+            block.classList.add('active');
+        });
+    }
+    
+    
+    //Кнопка входа в форме
+    const log_button = document.getElementById("log");
+    if (log_button) {
+        log_button.addEventListener('click', function() {
+            hiddenOpen_CloseClick(".container-login-registration");
+            formBox.classList.remove('active');
+            block.classList.remove('active');
+        });
+    }
+    
+    
+    //Закрытие формы при нажатии за ее пределы
+    document.querySelector(".overlay").addEventListener("click", function () {
+        hiddenOpen_CloseClick(".container-login-registration");
+    });
     
     
     //Переключение между формами входа и регистрации
@@ -34,32 +62,6 @@
             block.classList.remove('active');
         });
     }
-    
-    
-    //Кнопка регистрации в форме
-    const reg_button = document.getElementById("reg");
-    if (reg_button) {
-        reg_button.addEventListener('click', function() {
-            hiddenOpen_CloseClick();
-            formBox.classList.add('active');
-            block.classList.add('active');
-        });
-    }
-    
-    
-    //Кнопка входа в форме
-    const log_button = document.getElementById("log");
-    if (log_button) {
-        log_button.addEventListener('click', function() {
-            hiddenOpen_CloseClick();
-            formBox.classList.remove('active');
-            block.classList.remove('active');
-        });
-    }
-    
-    
-    //Закрытие формы при нажатии за ее пределы
-    document.querySelector(".overlay").addEventListener("click", hiddenOpen_CloseClick);
     
     
     /*Авторизация*/
@@ -126,6 +128,8 @@
                 .then(data => {
                     cleaningAndClosingForm(form, errorContainer);
                     console.log('Успешный ответ:', data);
+                    hiddenOpen_CloseClick(".confirm-email-container");
+                    confirmEmail(data);
                 })
                 .catch(err => {
                     displayErrors(err, errorContainer);
@@ -134,6 +138,25 @@
         });
     }
 
+    
+    //Обработка подтверждения электронной почты
+    function confirmEmail(body) {
+        document.querySelector(".send_confirm").addEventListener('click', function() {
+            body.CodeConfirm = document.getElementById('code_confirm').value;
+            const requestURL = '/Home/ConfirmEmail';
+
+            sendRequest('POST', requestURL, body)
+                .then(data => {
+                    console.log("Код подтверждения:", data);
+                    hiddenOpen_CloseClick(".confirm-email-container");
+                    location.reload();
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        })
+    }
+    
     
     //Отправление HTTP-запроса на указанный URL с заданным методом и телом запроса
     function sendRequest(method, url, body) {
@@ -150,7 +173,7 @@
                     throw errorData;
                 });
             }
-            return response.json;
+            return response.json();
         })
     }
 
@@ -167,7 +190,7 @@
     }
 
     
-    //очистка и закрытие формы
+    //Очистка и закрытие формы
     function cleaningAndClosingForm(form, errorContainer) {
         errorContainer.innerHTML = '';
         for (const key in form) {
@@ -175,7 +198,7 @@
                 form[key].value = '';
             }
         }
-        hiddenOpen_CloseClick();
+        hiddenOpen_CloseClick(".container-login-registration");
     }
 
     
@@ -192,19 +215,40 @@
     
     
     //Кнопка регистрации в альтернативном меню
-    document.getElementById("side-menu-button1").addEventListener('click', function () {
-        hiddenOpen_CloseClick();
-        formBox.classList.add('active');
-        block.classList.add('active');
-    });
-    
-    
+    const reg_button_1 =  document.getElementById("side-menu-button1");
+    if (reg_button_1) {
+        reg_button_1.addEventListener('click', function() {
+            hiddenOpen_CloseClick(".container-login-registration");
+            formBox.classList.add('active');
+            block.classList.add('active');
+        });
+    }
+
+
     //Кнопка входа в альтернативном меню
-    document.getElementById("side-menu-button2").addEventListener('click', function () {
-        hiddenOpen_CloseClick();
-        formBox.classList.remove('active');
-        block.classList.remove('active');
-    });
+    const reg_button_2 =  document.getElementById("side-menu-button2");
+    if (reg_button_2) {
+        reg_button_2.addEventListener('click', function() {
+            hiddenOpen_CloseClick(".container-login-registration");
+            formBox.classList.remove('active');
+            block.classList.remove('active');
+        });
+    }
+    
+    //Обработчик для подтверждения почты
+    document.querySelector(".button_confirm_close").addEventListener('click', function() {
+        hiddenOpen_CloseClick(".confirm-email-container");
+    })
+    
+    //Обработчик для кнопки google
+    const google = document.querySelectorAll('.google');
+    if (google) {
+        google.forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = `/Home/AuthenticationGoogle?returnUrl=${encodeURIComponent(window.location.href)}`;
+            })
+        });
+    }
 });
 
 

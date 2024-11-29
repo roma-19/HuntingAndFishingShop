@@ -14,6 +14,8 @@ public class OrderDb
     [Column("product_id")]
     public Guid ProductId { get; set; }
     
+    public ProductDb ProductDb { get; set; }
+    
     [Column("name")]
     public string? Name { get; set; }
     

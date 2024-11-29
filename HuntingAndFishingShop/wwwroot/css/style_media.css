@@ -60,8 +60,9 @@
     }
     .img_icon_2{
         display: flex;
-        width: 50px;
-        height: 50px;
+        align-self: center;
+        width: 40px;
+        height: 40px;
         margin: 5px;
     }
     
@@ -191,6 +192,13 @@
     nav ul li a {
         font-size: 16px;
         margin-inline: 10px;
+    }
+
+    /*Форма подтверждения------------------------*/
+    .confirm-email-form {
+        width: 75%;
+        justify-content: center;
+        margin-left: 65px;
     }
 }
 

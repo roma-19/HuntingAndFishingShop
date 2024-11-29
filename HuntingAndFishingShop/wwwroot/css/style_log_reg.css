@@ -1,5 +1,6 @@
 /*Вход и регистрация----------------------------------------------------------------------------------*/
-.container-login-registration {
+.container-login-registration,
+.confirm-email-container {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -88,6 +89,7 @@
     font-size: 30px;
     font-weight: bold;
     color: #000000;
+    margin: 0 70px 10px 70px;
 }
 
 .form-box label {
@@ -202,3 +204,134 @@ span {
     margin: 2px 25px;
     text-align: center;
 }
+
+.confirm-email-form {
+    margin-top: 130px;
+    margin-bottom: 100px;
+    display: grid;
+    padding: 50px;
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 991;
+    place-items: center;
+    border: 5px solid #000000;
+}
+
+.confirm-email-form input {
+    outline: none;
+    padding: 10px 5px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.confirm-email-form input:focus {
+    border-color: rgb(255, 165, 0);
+}
+
+.confirm-email-form .form__title {
+    font-size: 35px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.confirm-email-form p {
+    max-width: 300px;
+    text-align: center;
+}
+
+.button_confirm_container {
+    display: flex;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.button_confirm {
+    cursor: pointer;
+    justify-self: center;
+    color: rgb(255, 165, 0);
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    border: 3px solid;
+}
+
+.button_confirm:hover {
+    background-color: rgb(255, 165, 0);
+    color: #000;
+    border: 3px solid rgb(255, 165, 0);
+}
+
+.button_confirm_close {
+    color: #000;
+}
+
+.button_confirm_close:hover {
+    background: #000;
+    color: rgb(255, 165, 0);
+    border: 3px solid #000;
+}
+
+.warning {
+    padding: 5px;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.smile {
+    font-size: 50px;
+}
+
+.text_code {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.text_code::placeholder {
+    font-weight: 200;
+    font-size: 15px;
+    color : #000000;
+}
+
+.text_code:focus::placeholder {
+    font-size: 15px;
+    color : rgb(255, 165, 0);
+}
+
+.google-img {
+    width: 20%;
+    margin: 10px 0 0 5px;
+}
+
+.form-btn-container{
+    display: flex;
+    align-items: center;
+}
+
+.form-btn-container a{
+    display: contents;
+}
+
+.google {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
