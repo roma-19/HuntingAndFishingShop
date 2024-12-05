@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style_main.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_header.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_about.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_popular.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_log_reg.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_feedbacks.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_footer.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_catalogue.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_media.css" asp-append-version="true"/>
+    <link rel="shortcut icon" href="~/hunting.ico" />
+</head>
+<body>
+<header class="header">
+    <div id="hamburger" class="icon">&#9776</div>
+    <img class="header_img" src="~/images/icons/img_logo.png" alt="Логотип">
+    <div class="header_title">Охота и Рыбалка</div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <img class="img_icon_2" src="@User.FindFirst("AvatarPath")?.Value" alt="" />
+    }
+    <div class="header_nav">
+        <ul>
+            <li><a href="/Home/Main">Главная</a></li>
+        </ul>
+    </div>
+    <div class="header_button">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <button class="button"
+                    type="button"
+                    name="button"
+                    onclick="window.location.href = '@Url.Action("Logout", "Home")'"
+            >Выйти</button>
+            <img class="img_icon" src="@User.FindFirst("AvatarPath")?.Value" alt="" />
+        }
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <button id="reg" class="button">Регистрация</button>
+            <button id="log" class="button">Вход</button>
+        }
+    </div>
+</header>
+
+<div id="side-menu" class="side-menu">
+    <div>
+        <ul>
+            <li><a href="/Home/Main">Главная</a></li>
+        </ul>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <button class="button"
+                type="button"
+                name="button"
+                onclick="window.location.href = '@Url.Action("Logout", "Home")'"
+        >Выйти</button>
+    }
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <button class="button" id="side-menu-button1" type="button" name="button">Регистрация</button>
+        <button class="button" id="side-menu-button2" type="button" name="button">Войти</button>
+    }
+</div>
+
+<div>
+    @await Html.PartialAsync("_LoginRegistrationPartial")
+    @await Html.PartialAsync("_ConfirmEmailPartial")
+    @RenderBody()
+</div>
+
+<footer>
+    <div class="footer-left">
+        <p class="footer_title">Охота и Рыбалка</p>
+        <p class="footer_info">
+            Наш интернет-магазин предлагает широкий выбор товаров для охоты и рыбалки.
+            У нас вы найдете все необходимое для успешной охоты: от оружия и боеприпасов до одежды и снаряжения.
+            Рыболовы оценят большой ассортимент удилищ, катушек, приманок и аксессуаров для любой техники ловли.
+        </p>
+        <p class="footer_R">
+            &copy; 2024 - Hunting_And_Fishing_Shop - Roznovan
+        </p>
+    </div>
+    <div class="footer-right">
+        <div class="footer_contacts">
+            <p class="footer_title">Контакты</p>
+            <p class="text_contacts">Телефон - 0777-83-630</p>
+            <p class="text_contacts">Почта - roznovan.roma19@gmail.com</p>
+        </div>
+
+        <nav class="footer_nav">
+            <ul>
+                <li>
+                    <a href="https://t.me/Romarrio_06">
+                        <img src="~/images/contacts/tg.png" alt="Telegram">
+                        <p>Telegram</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/roma-19">
+                        <img src="~/images/contacts/github.png" alt="GitHub">
+                        <p>GitHub</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://vk.com/id463863123">
+                        <img class="footer_img" src="~/images/contacts/vk.png" alt="Vkontakte">
+                        <p>VKontakte</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/romarrio_19_">
+                        <img src="~/images/contacts/inst.png" alt="Instagram">
+                        <p>Instagram</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="~/js/scripts.js" asp-append-version="true"></script>
+<script src="~/js/range.js" asp-append-version="true"></script>
+</body>
+</html>

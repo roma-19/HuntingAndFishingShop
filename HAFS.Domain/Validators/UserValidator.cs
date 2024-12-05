@@ -13,7 +13,7 @@ public class UserValidator : AbstractValidator<User>
         
         RuleFor(u => u.Password)
             .NotEmpty().WithMessage("Пароль обязателен")
-            .MinimumLength(6).WithMessage("Пароль должен модержать не менее 6 символов");
+            .MinimumLength(6).WithMessage("Пароль должен содержать не менее 6 символов");
     }
 }
 

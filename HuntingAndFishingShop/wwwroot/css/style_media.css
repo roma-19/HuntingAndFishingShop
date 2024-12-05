@@ -1,3 +1,10 @@
+@media (max-width: 1440px) {
+    .product_item {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
 @media (max-width: 1257px) {
     /*О нас------------------------------*/
     .about_text{
@@ -14,6 +21,13 @@
     /*Навигация----------------------------*/
     nav ul li a {
         margin-inline: 40px;
+    }
+
+    /*Товары------------------------------*/
+    .product-card {
+        flex: 1 1 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+        overflow: hidden;
     }
 }
 
@@ -135,10 +149,24 @@
     footer {
         margin-top: 10px;
     }
+    .footer_contacts {
+        margin: 0 0 20px 80px;
+    }
     
     /*Отзыв-----------------------------*/
     .button{
         margin-bottom: 10px;
+    }
+    .product_item {
+        flex: 1 1 calc(100% - 10px);
+        max-width: calc(100% - 10px);
+    }
+}
+
+@media (max-width: 940px)
+{
+    .footer_contacts {
+        margin: 0 0 20px 60px;
     }
 }
 
@@ -153,9 +181,18 @@
         justify-content: center;
     }
     
+    /*Каталог--------------------------------------*/
+    .filter {
+        margin: 0 20px;
+    }
+    
     /*Навигация-----------------------------------*/
     nav ul li a {
         margin-inline: 30px;
+    }
+
+    .footer_contacts {
+        margin: 0 0 20px 40px;
     }
 }
 
@@ -168,6 +205,9 @@
     }
     h2 {
         font-size: 18px;
+    }
+    h3 {
+        font-size: 14px;
     }
     .img_logo {
         width: 30px;
@@ -200,6 +240,32 @@
         justify-content: center;
         margin-left: 65px;
     }
+
+
+    .footer_contacts {
+        margin: 0 0 20px 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer_contacts {
+        margin: 0 0 20px 20px;
+    }
+    
+    .text_contacts {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 470px) {
+    .footer_contacts {
+        margin: 0 0 20px 0;
+    }
+
+    .filter {
+        margin: 0;
+    }
 }
 
 @media (max-width: 410px) {
@@ -212,9 +278,15 @@
     h2 {
         font-size: 16px;
     }
+    
     .img_logo {
         width: 20px;
         height: 20px;
+    }
+    
+    .catalogue_logo {
+        justify-content: center;
+        padding: 0;
     }
     
     /*Навигация----------------------------------*/

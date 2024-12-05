@@ -3,6 +3,7 @@ using System.Security.Claims;
 using AutoMapper;
 using DAL;
 using Domain.Models;
+using Domain.ViewModels;
 using Domain.ViewModels.LoginAndRegistration;
 using Microsoft.AspNetCore.Mvc;
 using HuntingAndFishingShop.Models;
@@ -17,6 +18,7 @@ namespace HuntingAndFishingShop.Controllers;
 public class HomeController : Controller
 {
     private readonly IAccountService _accountService;
+    private readonly ICatalogueService _catalogueService;
 
     private IMapper _mapper { get; set; }
     
@@ -28,12 +30,13 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     
     private readonly IWebHostEnvironment _appEnvironment;
-    public HomeController(ILogger<HomeController> logger, IAccountService accountService, IWebHostEnvironment appEnvironment)
+    public HomeController(ILogger<HomeController> logger, IAccountService accountService, IWebHostEnvironment appEnvironment, ICatalogueService catalogueService)
     {
         _logger = logger;
         _mapper = mapperConfiguration.CreateMapper();
         _accountService = accountService;
         _appEnvironment = appEnvironment;
+        _catalogueService = catalogueService;
     }
 
     public IActionResult Main()

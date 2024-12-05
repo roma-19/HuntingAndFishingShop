@@ -186,11 +186,8 @@ public class AccountService : IAccountService
             if (await _userStorage.GetAll().FirstOrDefaultAsync(x => x.Email == model.Email) == null)
             {
                 model.Password = "google";
-                
                 userDb = _mapper.Map<UserDb>(model);
-                
                 await _userStorage.Add(userDb);
-                
                 var resultRegister = AuthenticateUserHelper.Authenticate(userDb);
                 return new BaseResponse<ClaimsIdentity>()
                 {
