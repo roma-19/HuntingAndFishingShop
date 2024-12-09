@@ -1,0 +1,25 @@
+@model Domain.ViewModels.Catalogue.ProductViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "_Layout2";
+}
+
+<div class="container-product">
+    <div class="container-section-product">
+        <div class="product-image">
+            <img src="@Model.ImagePath" alt="@Model.Name" />
+        </div>
+        <div class="product-details">
+            <h1 class="product-name">@Model.Name</h1>
+            <p class="product-info">Цена: @Model.Price &#8381;</p>
+            <p class="product-info" style="color: @(Model.Quantity > 0 ? "green" : "red");">
+                @(Model.Quantity > 0 ? "В наличии" : "Нет в наличии")
+            </p>
+            <text class="product-info">
+                Описание: <text class="desc">@Model.Description</text>
+            </text>
+        </div>
+    </div>
+</div>
+

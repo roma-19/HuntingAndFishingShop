@@ -11,9 +11,13 @@
             <ul>
                 @if (Model.Categories.Count != 0)
                 {
-                    @foreach (var item in Model.Categories)
+                    <li><a href="#" data-category-id="@Guid.Empty" class="active-category">Всё</a></li>
+                    @if (Model.Categories.Count != 0)
                     {
-                        <li><a>@item.Name</a></li>
+                        @foreach (var item in Model.Categories)
+                        {
+                            <li><a href="#" data-category-id="@item.Id">@item.Name</a></li>
+                        }
                     }
                 }
             </ul>
@@ -27,9 +31,8 @@
             </select>
         </div>
     </div>
-    
-    
-   
+
+
     <div class="cont_f_p">
         <div class="filter">
             <h3>Фильтр</h3>
@@ -51,24 +54,30 @@
             </div>
         </div>
         <div class="cont_product">
-            <div class="products">
-                @foreach (var item in Model.Products)
-                {
-                    <div class="product_item">
-                        <div class="product_main">
-                            <h2>@item.Name</h2>
+            @foreach (var item in Model.Products)
+            {
+                <div class="product_item">
+                    <div class="product_main">
+                        <h2>@item.Name</h2>
+                        <a href="/Catalogue/ProductPage/@item.Id" class="product-link">
                             <img src="@item.ImagePath" class="product_img" alt=""/>
+                        </a>
                         </div>
-                        <div class="product_extra">
-                            <p style="font-size: 25px">@item.Price &#8381;</p>
-                            @if (@item.Quantity > 0) { <p style="color: green">Есть в наличии</p> }
-                            @if (@item.Quantity <= 0) { <p style="color: red">Нет в наличии</p> }
-                        </div>
-                        <input asp-for="@item.Id" value="@item.Id" style="display: none"/>
-                        <input asp-for="@item.CategoryId" value="@item.CategoryId" style="display: none"/>
+                    <div class="product_extra">
+                        <p style="font-size: 25px">@item.Price &#8381;</p>
+                        @if (item.Quantity > 0)
+                        {
+                            <p style="color: green">Есть в наличии</p>
+                        }
+                        @if (item.Quantity <= 0)
+                        {
+                            <p style="color: red">Нет в наличии</p>
+                        }
                     </div>
-                }
-            </div>
+                    <input asp-for="@item.Id" value="@item.Id" style="display: none"/>
+                    <input asp-for="@item.CategoryId" value="@item.CategoryId" style="display: none"/>
+                </div>
+            }
         </div>
     </div>
 </div>

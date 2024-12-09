@@ -116,11 +116,6 @@ nav ul li a {
     cursor: pointer;
 }
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .product_item {
     display: flex;
     overflow: hidden;
@@ -131,14 +126,13 @@ nav ul li a {
     border-radius: 30px;
     position: relative;
     border: 4px solid #000;
-    flex: 1 1 calc(33% - 10px);
-    max-width: calc(33% - 10px);
+    flex: 2 2 calc(33% - 10px);
+    max-width: calc(100% - 10px);
     margin: 5px;
 }
 
 .product_item:hover {
     border: 4px solid #ffc107;
-    cursor: pointer;
 }
 
 .product_main {
@@ -254,6 +248,16 @@ nav ul li a {
     flex-direction: column;
 }
 
+.active-category {
+    color: orange;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 

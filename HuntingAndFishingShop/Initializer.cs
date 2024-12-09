@@ -19,6 +19,7 @@ public static class Initializer
     {
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<ICatalogueService, CatalogueService>();
+        services.AddScoped<IProductService, ProductService>();
 
         services.AddControllersWithViews()
             .AddDataAnnotationsLocalization()
