@@ -1,0 +1,44 @@
+@model List<Domain.ViewModels.Cart.CartViewModel>
+
+@{
+    ViewBag.Title = "Корзина";
+    Layout = "_Layout3";
+}
+
+
+<div class="container">
+    <div class="cart-container">
+        @if (Model.Count > 0)
+        {
+            <div class="cart-items">
+                @foreach (var item in Model)
+                {
+                    <div class="cart-item-card">
+                        <div class="prod-image">
+                            <img src="@item.ImagePath" alt="@item.ProductName" />
+                        </div>
+                        <div class="prod-details">
+                            <h3 class="prod-name">@item.ProductName</h3>
+                            <p class="prod-price">@item.Price ₽</p>
+                            <div class="prod-quantity">
+                                <label for="quantity-@item.Id">Количество:</label>
+                                <label id="quantity-@item.Id" min="1" class="quantity-input">@item.Quantity</label>
+                            </div>
+                            <p class="total-price">
+                                Общая цена: @(item.Price * item.Quantity) ₽
+                            </p>
+                        </div>
+                        <div class="product-actions">
+                            <button class="remove-item-btn" data-cart-item-id="@item.Id">Удалить</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="cart-none">Ваша корзина пуста.</p>
+        }
+    </div>
+
+</div>

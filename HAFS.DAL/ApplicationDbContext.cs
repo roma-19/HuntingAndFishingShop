@@ -1,10 +1,11 @@
 ﻿using Domain.ModelsDb;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DAL;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext
 {
     public DbSet<UserDb> UsersDb { get; set; }
     
@@ -14,6 +15,7 @@ public class ApplicationDbContext : DbContext
     
     public DbSet<CategoryDb> CategoriesDb { get; set; }
     
+    public DbSet<CartItemDb> CartItemsDb { get; set; }
     
     protected readonly IConfiguration Configuration;
 

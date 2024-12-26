@@ -1,0 +1,192 @@
+.profile-container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 70px;
+}
+
+/* Заголовок профиля */
+.profile-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.pass {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+}
+
+/* Детали профиля */
+.profile-details {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    color: #333;
+    flex-direction: column;
+}
+
+/* Логин и почта */
+.profile-details h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+/* Пароль */
+.password-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password {
+    font-size: 16px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+.conf {
+    align-self: center;
+    margin-top: 10px;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-password:hover, 
+.show-password_2:hover {
+    color: black;
+}
+
+.show-password_2 {
+    font-weight: bold;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Анимация для появления текста */
+.profile-details h1,
+.profile-details p,
+.pass {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    
+}
+
+.profile-details h1 {
+    animation-delay: 0.2s;
+}
+
+.profile-details p {
+    animation-delay: 0.4s;
+}
+
+.details {
+    color: black;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+.modal.visible {
+    visibility: visible;
+    opacity: 1;
+}
+.modal.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Содержимое окна */
+.modal-content {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    justify-content: center;
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

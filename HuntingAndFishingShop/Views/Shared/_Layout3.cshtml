@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8"/>
@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="~/css/style_log_reg.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_feedbacks.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_footer.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_catalogue.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_product.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_cart.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_media.css" asp-append-version="true"/>
     <link rel="shortcut icon" href="~/hunting.ico" />
 </head>
@@ -25,9 +28,7 @@
     }
     <div class="header_nav">
         <ul>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#popular">Популярное</a></li>
-            <li><a href="#feedback">Отзыв</a></li>
+            <li><a href="/Home/Main">Главная</a></li>
             <li><a href="/Catalogue/CataloguePage">Каталог</a></li>
         </ul>
     </div>
@@ -64,9 +65,7 @@
 <div id="side-menu" class="side-menu">
     <div>
         <ul>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#popular">Популярное</a></li>
-            <li><a href="#feedback">Отзыв</a></li>
+            <li><a href="/Home/Main">Главная</a></li>
             <li><a href="/Catalogue/CataloguePage">Каталог</a></li>
             @if (User.Identity.IsAuthenticated)
             {
@@ -114,7 +113,7 @@
             <p class="text_contacts">Телефон - 0777-83-630</p>
             <p class="text_contacts">Почта - roznovan.roma19@gmail.com</p>
         </div>
-        
+
         <nav class="footer_nav">
             <ul>
                 <li>
@@ -147,5 +146,8 @@
 </footer>
 
 <script src="~/js/scripts.js" asp-append-version="true"></script>
+<script src="~/js/range.js" asp-append-version="true"></script>
+<script src="~/js/product_script.js" asp-append-version="true"></script>
+<script src="~/js/cart.js" asp-append-version="true"></script>
 </body>
 </html>

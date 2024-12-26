@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = Model.Name;
-    Layout = "_Layout2";
+    Layout = "_Layout3";
 }
 
 <div class="container-product">
@@ -12,10 +12,27 @@
         </div>
         <div class="product-details">
             <h1 class="product-name">@Model.Name</h1>
-            <p class="product-info">Цена: @Model.Price &#8381;</p>
-            <p class="product-info" style="color: @(Model.Quantity > 0 ? "green" : "red");">
-                @(Model.Quantity > 0 ? "В наличии" : "Нет в наличии")
-            </p>
+            <div class="product-details-2">
+                <div class="product_p_a">
+                    <p class="product-info">Цена: @Model.Price &#8381;</p>
+                    <p class="product-info" style="color: @(Model.Quantity > 0 ? "green" : "red");">
+                        @(Model.Quantity > 0 ? "В наличии" : "Нет в наличии")
+                    </p>
+                </div>
+                <div class="product-btn">
+                    @if (Model.Quantity > 0)
+                    {
+                        <button class="btn-add"
+                                data-product-id="@Model.Id"
+                                data-product-price="@Model.Price"
+                                data-product-image="@Model.ImagePath">Добавить в корзину</button>
+                    }
+                    else
+                    {
+                        <button class="btn-add disabled" disabled style="cursor: not-allowed">Добавить в корзину</button>
+                    }
+                </div>
+            </div>
             <text class="product-info">
                 Описание: <text class="desc">@Model.Description</text>
             </text>

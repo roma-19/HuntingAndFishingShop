@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="~/css/style_footer.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_catalogue.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_product.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_cart.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style_profile.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/style_media.css" asp-append-version="true"/>
     <link rel="shortcut icon" href="~/hunting.ico" />
 </head>
@@ -33,12 +35,24 @@
     <div class="header_button">
         @if (User.Identity.IsAuthenticated)
         {
-            <button class="button"
-                    type="button"
-                    name="button"
-                    onclick="window.location.href = '@Url.Action("Logout", "Home")'"
-            >Выйти</button>
-            <img class="img_icon" src="@User.FindFirst("AvatarPath")?.Value" alt="" />
+            <div class="user-menu">
+                <img 
+                    class="img_icon" 
+                    src="@User.FindFirst("AvatarPath")?.Value" 
+                    alt="User Photo" 
+                    id="userPhoto"
+                />
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <p class="user-name">@User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value</p>
+                    <a href="/Profile/ProfilePage">Профиль</a>
+                    <a href="/Cart/CartPage">Корзина</a>
+                    <button class="button_exit"
+                            type="button"
+                            name="button"
+                            onclick="window.location.href = '@Url.Action("Logout", "Home")'"
+                    >Выйти</button>
+                </div>
+            </div>
         }
         @if (!User.Identity.IsAuthenticated)
         {
@@ -52,6 +66,11 @@
     <div>
         <ul>
             <li><a href="/Home/Main">Главная</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a href="/Profile/ProfilePage">Профиль</a></li>
+                <li><a href="/Cart/CartPage">Корзина</a></li>
+            }
         </ul>
     </div>
     @if (User.Identity.IsAuthenticated)
@@ -128,5 +147,6 @@
 <script src="~/js/scripts.js" asp-append-version="true"></script>
 <script src="~/js/range.js" asp-append-version="true"></script>
 <script src="~/js/product_script.js" asp-append-version="true"></script>
+<script src="~/js/cart.js" asp-append-version="true"></script>
 </body>
 </html>

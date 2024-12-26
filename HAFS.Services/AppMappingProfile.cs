@@ -3,10 +3,11 @@ using DAL.Storage;
 using Domain.Models;
 using Domain.ModelsDb;
 using Domain.ViewModels;
+using Domain.ViewModels.Cart;
 using Domain.ViewModels.Catalogue;
 using Domain.ViewModels.LoginAndRegistration;
 
-namespace Services.Implementation;
+namespace Services;
 
 public class AppMappingProfile : Profile
 {
@@ -28,6 +29,10 @@ public class AppMappingProfile : Profile
         //Товары
         CreateMap<Product, ProductDb>().ReverseMap();
         CreateMap<Product, ProductViewModel>().ReverseMap();
+        
+        //Корзина
+        CreateMap<CartItem, CartItemDb>().ReverseMap();
+        CreateMap<CartItem, CartViewModel>().ReverseMap();
     }
 }
 

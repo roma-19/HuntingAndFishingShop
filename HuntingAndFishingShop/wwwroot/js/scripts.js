@@ -37,7 +37,21 @@
             block.classList.remove('active');
         });
     }
-    
+
+    //Меню пользователя
+    const userPhoto = document.getElementById("userPhoto");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    if (userPhoto) {
+        userPhoto.addEventListener("click", function() {
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (!userPhoto.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = "none";
+            }
+        });
+    }
     
     //Закрытие формы при нажатии за ее пределы
     document.querySelector(".overlay").addEventListener("click", function () {

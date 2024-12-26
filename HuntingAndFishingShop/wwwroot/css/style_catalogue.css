@@ -69,7 +69,6 @@ nav ul li a {
     padding: 20px;
     border-radius: 30px;
     height: fit-content;
-    display: flex;
     justify-content: center;
     flex-direction: column;
     
@@ -126,7 +125,7 @@ nav ul li a {
     border-radius: 30px;
     position: relative;
     border: 4px solid #000;
-    flex: 2 2 calc(33% - 10px);
+    flex: 2 2 calc(25% - 10px);
     max-width: calc(100% - 10px);
     margin: 5px;
 }
@@ -259,6 +258,44 @@ nav ul li a {
     color: inherit;
 }
 
+.cont_f_s {
+    flex-direction: column;
+    height: fit-content;
+}
+
+.search {
+    padding: 20px;
+}
+
+.search input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    outline: none;
+}
+
+.search input:hover {
+    border: 3px solid #000;
+}
+
+.search button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ffc107;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid #ffc107;
+}
+
+.search button:hover {
+    color: black;
+    border: 3px solid #000;
+}
 
 
 

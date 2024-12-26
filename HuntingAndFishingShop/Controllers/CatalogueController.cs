@@ -2,7 +2,7 @@ using AutoMapper;
 using Domain.ViewModels.Catalogue;
 using Domain.ViewModels.Filter;
 using Microsoft.AspNetCore.Mvc;
-using Services.Implementation;
+using Services;
 using Services.Interfaces;
 
 namespace HuntingAndFishingShop.Controllers;
@@ -51,6 +51,13 @@ public class CatalogueController : Controller
     public async Task<IActionResult> Filter([FromBody] ProductFilter filter)
     {
         var result = _productService.GetProductByFilter(filter);
+        
+        if (!string.IsNullOrWhiteSpace(filter.SearchQuery))
+        {
+            result.Data = result.Data
+                .Where(p => p.Name.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
         
         var filteredProducts = _mapper.Map<List<ProductViewModel>>(result.Data);
         

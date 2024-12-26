@@ -14,8 +14,7 @@ public class AuthenticateUserHelper
             new Claim(ClaimsIdentity.DefaultRoleClaimType, userDb.Role.ToString()),
             new Claim("AvatarPath", userDb.PathImage),
         };
-        return new ClaimsIdentity(claims, "ApplicationCookie",
-        ClaimTypes.Email, ClaimsIdentity.DefaultRoleClaimType);
+        return new ClaimsIdentity(claims, "ApplicationCookie",ClaimTypes.Email, ClaimsIdentity.DefaultRoleClaimType);
     }
 }
 

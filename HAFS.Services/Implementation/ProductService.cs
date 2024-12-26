@@ -45,7 +45,14 @@ public class ProductService : IProductService
                 
                 if (filter.MaxPrice != 120000 || filter.MinPrice != 0)
                 {
-                    productFilter = productFilter.Where(p => p.Price < filter.MaxPrice && p.Price > filter.MinPrice).ToList();
+                    productFilter = productFilter.Where(p => p.Price <= filter.MaxPrice && p.Price >= filter.MinPrice).ToList();
+                }
+                
+                if (!string.IsNullOrWhiteSpace(filter.SearchQuery))
+                {
+                    productFilter = productFilter
+                        .Where(p => p.Name.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
                 }
             }
             var result = _mapper.Map<List<Product>>(productFilter);
@@ -72,7 +79,6 @@ public class ProductService : IProductService
         try
         {
             var productDb = await _productDbStorage.Get(id);
-            
             var result = _mapper.Map<Product>(productDb);
 
             if (result == null)
@@ -83,7 +89,6 @@ public class ProductService : IProductService
                     StatusCode = StatusCode.Ok
                 };
             }
-
             return new BaseResponse<Product>()
             {
                 Data = result,

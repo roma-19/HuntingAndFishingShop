@@ -45,3 +45,37 @@
     font-weight: normal;
     font-size: 16px;
 }
+
+.product_p_a {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-add {
+    align-self: center;
+    padding: 15px;
+    background: #fff;
+    border: 3px solid #ffc107;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: #ffc107;
+}
+
+.product-details-2 {
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,14 @@
 using System.Diagnostics;
 using System.Security.Claims;
 using AutoMapper;
-using DAL;
 using Domain.Models;
-using Domain.ViewModels;
 using Domain.ViewModels.LoginAndRegistration;
 using Microsoft.AspNetCore.Mvc;
 using HuntingAndFishingShop.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
-using Services.Implementation;
+using Services;
 using Services.Interfaces;
 
 namespace HuntingAndFishingShop.Controllers;
@@ -54,6 +52,7 @@ public class HomeController : Controller
             var responce = await _accountService.Login(user);
             if (responce.StatusCode == Domain.Enum.StatusCode.Ok)
             {
+                Console.WriteLine($"User authenticated: {responce.Data != null}");
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(responce.Data));
                 return Ok(model);
